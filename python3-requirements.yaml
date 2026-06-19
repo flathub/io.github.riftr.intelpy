@@ -1,0 +1,39 @@
+# Generated with flatpak-pip-generator --runtime=org.kde.Sdk//5.15-25.08 --yaml --requirements-file=requirements.txt --prefer-wheels=pygame
+name: python3-requirements
+buildsystem: simple
+build-commands: []
+modules:
+  - name: python3-networkx
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "networkx" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/9e/c9/b2622292ea83fbb4ec318f5b9ab867d0a28ab43c5717bb85b0a5f6b3b0a4/networkx-3.6.1-py3-none-any.whl
+        sha256: d47fbf302e7d9cbbb9e2555a0d267983d2aa476bac30e90dfbe5669bd57f3762
+  - name: python3-watchdog
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "watchdog" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/db/7d/7f3d619e951c88ed75c6037b246ddcf2d322812ee8ea189be89511721d54/watchdog-6.0.0.tar.gz
+        sha256: 9ddf7c82fda3ae8e24decda1338ede66e1c99883db93711d8fb941eaa2d8c282
+  - name: python3-pygame
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "pygame" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/85/b5/aa23aa2e70bcba42c989c02e7228273c30f3b44b9b264abb93eaeff43ad7/pygame-2.6.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+        sha256: ef07c0103d79492c21fced9ad68c11c32efa6801ca1920ebfd0f15fb46c78b1c
+        only-arches:
+          - x86_64
+      - type: file
+        url: https://files.pythonhosted.org/packages/9f/8f/617a1196e31ae3b46be6949fbaa95b8c93ce15e0544266198c2266cc1b4d/pygame-2.6.1-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
+        sha256: 27eb17e3dc9640e4b4683074f1890e2e879827447770470c2aba9f125f74510b
+        only-arches:
+          - aarch64
